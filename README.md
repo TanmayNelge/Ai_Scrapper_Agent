@@ -26,6 +26,13 @@
 - **LM Studio** running Qwen models
 - **GPU**: NVIDIA 3050/4050 (4GB+ VRAM)
 
+
+### FlowChart
+
+![dd6ccc43-930b-470e-b8e3-862fa426dc3d](https://github.com/user-attachments/assets/ef07ff56-5ffc-49c9-8eb7-d393abf5e902)
+
+
+
 ### Setup
 
 ```bash
