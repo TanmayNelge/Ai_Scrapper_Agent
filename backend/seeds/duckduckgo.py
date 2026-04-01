@@ -162,5 +162,5 @@ def _fetch_seeds_sync(query: str, max_results: int = 50) -> list[str]:
     return clean
 
 
-async def get_seeds_async(query: str, max_results: int = 50) -> list[str]:
+async def get_seeds_async(query: str, max_results: int = 75) -> list[str]:
     return await asyncio.to_thread(_fetch_seeds_sync, query, max_results)

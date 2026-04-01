@@ -52,7 +52,7 @@ def main():
     print()
     print("IMPORTANT: Make sure LM Studio has a model LOADED and server STARTED on port 1234!")
 
-    uvicorn.run(
+    uvicorn.run(    
         "backend.main:app",
         host=args.host,
         port=args.port,

@@ -16,6 +16,7 @@ import json
 import csv
 import io
 import time
+from datetime import datetime
 from typing import Optional
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
@@ -255,10 +256,14 @@ async def export_csv(project_id: int):
             all_keys.update(d.keys())
         all_keys = sorted(all_keys)
 
-        writer = csv.DictWriter(output, fieldnames=["source_url"] + list(all_keys))
+        writer = csv.DictWriter(output, fieldnames=["source_url", "created_at"] + list(all_keys))
         writer.writeheader()
         for r, d in zip(results, all_data):
-            row = {"source_url": r.source_url}
+            readable_time = datetime.fromtimestamp(r.created_at).strftime('%Y-%m-%d %H:%M:%S')
+            row = {
+                "source_url": r.source_url,
+                "created_at": readable_time
+            }
             row.update(d)
             writer.writerow(row)
 

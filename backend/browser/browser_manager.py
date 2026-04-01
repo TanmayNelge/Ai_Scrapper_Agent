@@ -318,7 +318,7 @@ class BrowserManager:
                         lower.includes('add to cart') ||
                         lower.includes('buy now') ||
                         lower.includes('price') ||
-                        lower.includes('in stock') ||
+                        lower.includes('in stock') ||   
                         lower.includes('out of stock') ||
                         lower.includes('rating') ||
                         lower.includes('review') ||
